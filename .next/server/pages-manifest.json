@@ -1,6 +1,16 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/successfullsignup": "pages/successfullsignup.js"
+  "/api/hello": "pages/api/hello.js",
+  "/dashboard": "pages/dashboard.html",
+  "/forgotpass": "pages/forgotpass.html",
+  "/forgotpassotp": "pages/forgotpassotp.html",
+  "/home": "pages/home.html",
+  "/": "pages/index.html",
+  "/login": "pages/login.html",
+  "/notavet": "pages/notavet.html",
+  "/sign-up": "pages/sign-up.html",
+  "/successfullsignup": "pages/successfullsignup.html",
+  "/_error": "pages/_error.js",
+  "/404": "pages/404.html"
 }

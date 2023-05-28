@@ -27,6 +27,7 @@ import {
   InputGroup,
   InputLeftElement,
   Checkbox,
+  ChakraBaseProvider,
 } from "@chakra-ui/react";
 import { SunIcon, PhoneIcon, MoonIcon } from "@chakra-ui/icons";
 import Link from "next/link";

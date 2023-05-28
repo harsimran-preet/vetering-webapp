@@ -12,6 +12,7 @@ import {
   Flex,
   theme,
   ColorModeProvider,
+  useDisclosure,
   CSSReset,
   Heading,
   InputLeftAddon,
@@ -27,9 +28,19 @@ import {
   InputLeftElement,
   Checkbox,
 } from "@chakra-ui/react";
-import Link from "next/link";
+import { Link as Link1 } from "@chakra-ui/react";
+
+import {
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogContent,
+  AlertDialogOverlay,
+} from "@chakra-ui/react";
 
 import { SunIcon, ArrowBackIcon, MoonIcon } from "@chakra-ui/icons";
+import Link from "next/link";
 
 const variant_color = "blue";
 
@@ -120,7 +131,7 @@ function SignupForm() {
           <Select placeholder="Select option">
             <option value="option1">Male</option>
             <option value="option2">Female</option>
-            <option value="option3">Other</option>
+            <option value="option3">other</option>
           </Select>
         </FormControl>
         <FormControl my={4}>
@@ -142,7 +153,11 @@ function SignupForm() {
           <Input placeholder="Select Date and Time" size="md" type="date" />
         </FormControl>
         <FormControl my={4}>
-          <FormLabel>Social Security Number (SSN)</FormLabel>
+          <FormLabel>
+            Social Security Number (SSN)
+            <AlertDialogExample />
+          </FormLabel>
+
           <SSNInput />
         </FormControl>
         <FormControl my={4}>
@@ -204,6 +219,46 @@ function SSNInput() {
         </Button>
       </InputRightElement>
     </InputGroup>
+  );
+}
+
+function AlertDialogExample() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const cancelRef = React.useRef();
+
+  return (
+    <>
+      <Link1 color="teal.500" onClick={onOpen}>
+        &nbsp;Why?
+      </Link1>
+
+      <AlertDialog
+        isOpen={isOpen}
+        leastDestructiveRef={cancelRef}
+        onClose={onClose}
+      >
+        <AlertDialogOverlay>
+          <AlertDialogContent>
+            <AlertDialogHeader fontSize="lg" fontWeight="bold">
+              Why we ask for SSN?
+            </AlertDialogHeader>
+
+            <AlertDialogBody>
+              Your Social Security Number is not stored on our app and is solely
+              processed by the Veterans Affairs (USVA) to protect against stolen
+              valor. We want to return service to those who deserve it, and the
+              VA requires this information to confirm your Veteran status.
+            </AlertDialogBody>
+
+            <AlertDialogFooter>
+              <Button colorScheme="teal" onClick={onClose} ml={3}>
+                Okay
+              </Button>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialogOverlay>
+      </AlertDialog>
+    </>
   );
 }
 export default Signup;

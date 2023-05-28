@@ -34,7 +34,7 @@ import Link from "next/link";
 import vetering from "../img/veteringlogo.png";
 import { useCallback, useEffect, useRef } from "react";
 
-import ReactCanvasConfetti from "react-canvas-confetti";
+// import ReactCanvasConfetti from "react-canvas-confetti";
 
 
 
@@ -43,11 +43,11 @@ const variant_color = "blue";
 function Login() {
     // const refAnimationInstance = useRef(null);
 
-    // const getInstance = useCallback((instance: null) => {
+    // const getInstance = useCallback((instance) => {
     //   refAnimationInstance.current = instance;
     // }, []);
 
-    // const makeShot = useCallback((particleRatio: number, opts: any) => {
+    // const makeShot = useCallback((particleRatio, opts) => {
     //   refAnimationInstance.current &&
     //     refAnimationInstance.current({
     //       ...opts,
@@ -90,7 +90,6 @@ function Login() {
 
   return (
     <div>
-      <ChakraProvider>
       {/* <ReactCanvasConfetti
         refConfetti={getInstance}
         style={{
@@ -102,6 +101,7 @@ function Login() {
           left: 0,
         }}
       /> */}
+      <ChakraProvider>
       <CSSReset />
       <LoginArea />
       </ChakraProvider>

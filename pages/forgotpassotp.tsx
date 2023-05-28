@@ -37,8 +37,8 @@ function Login() {
   return (
     <div>
       <ChakraProvider>
-      <CSSReset />
-      <LoginArea />
+        <CSSReset />
+        <LoginArea />
       </ChakraProvider>
     </div>
   );

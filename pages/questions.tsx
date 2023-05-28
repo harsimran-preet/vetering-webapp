@@ -53,7 +53,6 @@ import {
   HamburgerIcon,
   InfoOutlineIcon,
 } from "@chakra-ui/icons";
-import { MdOutlineHome } from "react-icons/md";
 
 const variant_color = "blue";
 
@@ -320,58 +319,6 @@ function ThemeSelector() {
         variant="ghost"
       />
     </Box>
-  );
-}
-const Card = ({ imageUrl, heading, description }) => {
-  return (
-    <Box
-      display="flex"
-      flexDirection="row"
-      justifyContent="flex-start"
-      alignItems="center"
-      backgroundColor="#f2f2f2"
-      borderRadius="10px"
-      boxShadow="0px 0px 10px rgba(0, 0, 0, 0.1)"
-      margin="15px"
-      padding="10px"
-      maxW="400px"
-      cursor="pointer"
-      transition="all 0.2s ease-in-out"
-      _hover={{
-        backgroundColor: "#d4d4d4",
-        boxShadow: "0px 0px 15px rgba(0, 0, 0, 0.2)",
-      }}
-      onClick={() => console.log("Card clicked!")}
-    >
-      <Box>
-        <Text fontSize={20} as="b" size="lg" mb="2" color="#333">
-          <InfoOutlineIcon /> &nbsp;&nbsp;
-          {heading}
-        </Text>
-      </Box>
-    </Box>
-  );
-};
-function VerticallyCenter(props) {
-  const { description, heading } = props;
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  return (
-    <>
-      <Button onClick={onOpen}>Trigger modal</Button>
-
-      <Modal onClose={onClose} isOpen={isOpen} isCentered>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>{description}</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>{heading}</ModalBody>
-          <ModalFooter>
-            <Button onClick={onClose}>Close</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-    </>
   );
 }
 export default Login;

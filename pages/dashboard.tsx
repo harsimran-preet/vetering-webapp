@@ -11,8 +11,6 @@ import {
   ModalBody,
   ModalCloseButton,
   Box,
-  initialRef,
-  finalRef,
   Radio,
   Text,
   Link as ChakraLink,
@@ -195,13 +193,7 @@ function InitialFocus() {
           NEW REQUEST
         </Button>
 
-        <Modal
-          initialFocusRef={initialRef}
-          finalFocusRef={finalRef}
-          isOpen={isOpen}
-          onClose={onClose}
-          size="4xl"
-        >
+        <Modal isOpen={isOpen} onClose={onClose} size="4xl">
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>Create your request</ModalHeader>

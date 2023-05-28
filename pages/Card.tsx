@@ -13,8 +13,6 @@ import {
   Input,
   Button,
   Textarea,
-  initialRef,
-  finalRef,
   ModalContent,
   ModalHeader,
   ModalFooter,
@@ -68,7 +66,6 @@ function ScrollableTable() {
 }
 
 function ScrollableCardTable() {
-  
   return (
     <ChakraProvider>
       <Card
@@ -81,7 +78,12 @@ function ScrollableCardTable() {
     </ChakraProvider>
   );
 }
-const Card = ({ imageUrl, heading, description }) => {
+interface Cardprops {
+  imageUrl: string;
+  heading: string;
+  description: string;
+}
+const Card: React.FC<Cardprops> = ({ imageUrl, heading, description }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
   return (
@@ -123,13 +125,7 @@ const Card = ({ imageUrl, heading, description }) => {
           </Text>
         </Box>
       </Box>
-      <Modal
-        initialFocusRef={initialRef}
-        finalFocusRef={finalRef}
-        isOpen={isOpen}
-        onClose={onClose}
-        size="4xl"
-      >
+      <Modal isOpen={isOpen} onClose={onClose} size="4xl">
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Your request info</ModalHeader>

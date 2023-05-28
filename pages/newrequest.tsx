@@ -198,7 +198,6 @@ function SignupForm() {
             SUBMIT
           </Button>
         </Stack>
-        
       </form>
     </Box>
   );
@@ -243,43 +242,4 @@ function SSNInput() {
   );
 }
 
-function AlertDialogExample() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const cancelRef = React.useRef();
-
-  return (
-    <>
-      <Link1 color="teal.500" onClick={onOpen}>
-        &nbsp;Why?
-      </Link1>
-
-      <AlertDialog
-        isOpen={isOpen}
-        leastDestructiveRef={cancelRef}
-        onClose={onClose}
-      >
-        <AlertDialogOverlay>
-          <AlertDialogContent>
-            <AlertDialogHeader fontSize="lg" fontWeight="bold">
-              Why we ask for SSN?
-            </AlertDialogHeader>
-
-            <AlertDialogBody>
-              Your Social Security Number is not stored on our app and is solely
-              processed by the Veterans Affairs (USVA) to protect against stolen
-              valor. We want to return service to those who deserve it, and the
-              VA requires this information to confirm your Veteran status.
-            </AlertDialogBody>
-
-            <AlertDialogFooter>
-              <Button colorScheme="teal" onClick={onClose} ml={3}>
-                Okay
-              </Button>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialogOverlay>
-      </AlertDialog>
-    </>
-  );
-}
 export default Signup;

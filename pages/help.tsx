@@ -44,7 +44,6 @@ import {
   HamburgerIcon,
   InfoOutlineIcon,
 } from "@chakra-ui/icons";
-import { MdOutlineHome } from "react-icons/md";
 
 const variant_color = "blue";
 
@@ -52,8 +51,8 @@ function Login() {
   return (
     <div>
       <ChakraProvider>
-      <CSSReset />
-      <LoginArea />
+        <CSSReset />
+        <LoginArea />
       </ChakraProvider>
     </div>
   );
@@ -190,7 +189,12 @@ function ThemeSelector() {
     </Box>
   );
 }
-const Card = ({ imageUrl, heading, description }) => {
+interface Cardprops {
+  imageUrl: string;
+  heading: string;
+  description: string;
+}
+const Card: React.FC<Cardprops> = ({ imageUrl, heading, description }) => {
   return (
     <Box
       display="flex"

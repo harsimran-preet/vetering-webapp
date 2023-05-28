@@ -9,11 +9,8 @@ import {
   ModalHeader,
   ModalFooter,
   ModalBody,
-  RadioBoxWithDateInput,
   ModalCloseButton,
   Box,
-  initialRef,
-  finalRef,
   Radio,
   Text,
   Link as ChakraLink,
@@ -95,13 +92,7 @@ function CardModalArea() {
       >
         NEW REQUEST
       </Button>
-      <Modal
-        initialFocusRef={initialRef}
-        finalFocusRef={finalRef}
-        isOpen={isOpen}
-        onClose={onClose}
-        size="4xl"
-      >
+      <Modal isOpen={isOpen} onClose={onClose} size="4xl">
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Your request info</ModalHeader>

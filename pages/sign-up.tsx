@@ -224,7 +224,7 @@ function SSNInput() {
 
 function AlertDialogExample() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const cancelRef = React.useRef();
+  const cancelRef = React.useRef<HTMLElement>(null);
 
   return (
     <>

@@ -53,7 +53,6 @@ import {
   HamburgerIcon,
   InfoOutlineIcon,
 } from "@chakra-ui/icons";
-import { MdOutlineHome } from "react-icons/md";
 
 const variant_color = "blue";
 

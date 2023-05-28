@@ -6,6 +6,8 @@ import {
   Link as ChakraLink,
   VStack,
   InputRightElement,
+  useDisclosure,
+  useToast,
   Button,
   Code,
   Stack,
@@ -34,7 +36,14 @@ import {
 
 import Link from "next/link";
 import vetering from "../img/veteringlogo.png";
-import { SunIcon, ArrowBackIcon, MoonIcon, EmailIcon, EditIcon, InfoIcon } from "@chakra-ui/icons";
+import {
+  SunIcon,
+  ArrowBackIcon,
+  MoonIcon,
+  EmailIcon,
+  EditIcon,
+  InfoIcon,
+} from "@chakra-ui/icons";
 
 const variant_color = "blue";
 
@@ -42,14 +51,16 @@ function Login() {
   return (
     <div>
       <ChakraProvider>
-      <CSSReset />
-      <LoginArea />
+        <CSSReset />
+        <LoginArea />
       </ChakraProvider>
     </div>
   );
 }
 
 function LoginArea() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const toast = useToast();
   return (
     <Flex minHeight="100vh" width="full" align="center" justifyContent="center">
       <Box
@@ -96,31 +107,6 @@ function LoginArea() {
               heading="Sam Smith"
               description="Heres a desription on the Job"
             />
-            <Card
-              imageUrl="https://bit.ly/dan-abramov"
-              heading="Sam Smith"
-              description="Heres a desription on the Job"
-            />
-            <Card
-              imageUrl="https://bit.ly/dan-abramov"
-              heading="Sam Smith"
-              description="Heres a desription on the Job"
-            />
-            <Card
-              imageUrl="https://bit.ly/dan-abramov"
-              heading="Sam Smith"
-              description="Heres a desription on the Job"
-            />
-            <Card
-              imageUrl="https://bit.ly/dan-abramov"
-              heading="Sam Smith"
-              description="Heres a desription on the Job"
-            />
-            <Card
-              imageUrl="https://bit.ly/dan-abramov"
-              heading="Sam Smith"
-              description="Heres a desription on the Job"
-            />
           </Box>
         </Flex>
 
@@ -139,7 +125,7 @@ function LoginArea() {
           >
             HELP
           </Button>
-         
+
           <Button
             leftIcon={<EditIcon />}
             colorScheme="teal"
